@@ -13,14 +13,16 @@ const routes: Routes = [
       path:'', component: QuotesComponent, 
       canActivate: [AuthGuard],  
       canActivateChild: [AuthGuard],
-      
-      children: [{ 
-            path: '', 
-            children: [{
-                    path: 'quotes',
-                    component: QuotesComponent,
-                }]
-        }]
+
+       // if children exist use this,
+        
+      // children: [{ 
+      //       path: '', 
+      //       children: [{
+      //               path: 'quotes',
+      //               component: QuotesComponent,
+      //           }]
+      //   }]
     
   }			 
 ];

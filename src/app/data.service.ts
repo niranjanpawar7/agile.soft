@@ -20,9 +20,10 @@ export class DataService {
     login(data){ 
         return this.http.post('http://localhost:5000/users/login', data); 
     };
-
+ 
     getUserData(token){
-        let data = {token:token }; 
+        // let data = {token:token }; 
+        let data = null;
         return this.http.post('http://localhost:5000/users/userData', data); 
     }
     
