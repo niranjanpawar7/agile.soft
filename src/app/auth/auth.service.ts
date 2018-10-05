@@ -9,7 +9,7 @@ export class AuthService {
 
 
     sendToken(token: string) { 
-      localStorage.getItem('usertoken');
+      localStorage.getItem('usertoken');  
     }
 
 
