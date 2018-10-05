@@ -44,11 +44,8 @@ export class AuthorComponent implements OnInit {
           
           this.allData.filter(Items =>{ 
               if(Items["author"]["name"] ==this.authorName)
-              { 
-                  debugger;
-
-                 this.authorData.push(Items); 
-                  
+              {  
+                 this.authorData.push(Items);  
               }
           })
 
