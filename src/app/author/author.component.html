@@ -1,0 +1,51 @@
+<main>
+
+ <div class="col-md-12" *ngIf="authorData">
+
+     
+     <div class="well well-sm">
+         <div class="col-md-3">
+         <p *ngFor="let data of authorData"> 
+           <span>  {{data.author.name }}</span>
+         </p>
+         </div> 
+          
+         <div class="col-md-3">
+              <button [routerLink]="['/quotes']"  class="btn btn-success" type="button">Listing</button>
+         </div> 
+
+         <div class="col-md-3">
+             <button type="button" class="btn btn-default" (click)="Logout()">Logout</button>   
+         </div>  
+    </div>
+ </div>
+
+ <div class="clearfix"></div>
+ <br>
+ <div class="col-md-3" *ngFor="let data of authorData">  
+        <div class="panel panel-primary">  
+            <div class="panel-body">
+                <p> {{data.quote}}</p> 
+                <h5> {{ data.author.name }} </h5>     
+                    
+                <div class="row">                  
+                    <span class="well"> {{ data.topics }}</span>  
+                </div>  
+            
+                <div class="count-section">
+                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ data.likeCount }}</span></div>
+                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ data.shareCount }}</span></div>
+                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ data.viewCount }}</span></div>
+                </div>   
+                        
+                <div class="clearfix"></div>
+                <div class="row">    
+                <div class="col-md-12 text-center"> 
+                    <button [routerLink]="['/quotes/', data.author.id]"  class="btn btn-custom" type="button" title="View Details">Details</button>
+                </div>    
+                </div>
+            </div> 
+        </div>  
+   </div>
+ 
+</main>

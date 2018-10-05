@@ -1,0 +1,38 @@
+<div class="col-md-6 col-md-offset-3"> 
+<article>
+    {{ authorId }}
+    <div class="panel panel-default" *ngIf="singleQuate"> 
+        <div class="panel-heading">
+           <div class="col-md-4"> 
+                <h4>{{ singleQuate.author.name }}</h4>
+           </div>
+           <div class="col-md-4"> 
+                <button [routerLink]="['/quotes']"  class="btn btn-custom" type="button" title="View Details">Listing</button>    
+           </div>                 
+           <div class="col-md-4"> 
+                <button class="btn btn-default" type="button" (click)="Logout()">Logout</button>    
+           </div>                 
+
+        </div>
+        <div class="panel-body"> 
+            <p><strong>Profession:</strong> <span>{{ singleQuate.author.name }}</span> </p> 
+            <p><strong>Intro :</strong>  <span>{{ singleQuate.author.intro }}</span></p> 
+            <p><strong>Born :</strong><span>{{ singleQuate.author.born }}</span></p> 
+            <p><strong>Died :</strong><span>{{ singleQuate.author.died }}</span> </p>  
+            <p class="topics"><strong>Topics :</strong><span>{{ singleQuate.topics }}</span> </p> 
+            <p><strong>Quote :</strong><span>{{ singleQuate.quote }}</span> </p>
+        </div>
+        <div class="panel-footer">
+        <div class="row counts-detail">
+            <div class="col-md-4 col-sm-4 col-xs-4"> <span> {{ singleQuate.viewCount}} </span></div>
+            <div class="col-md-4 col-sm-4 col-xs-4"> <span> {{ singleQuate.shareCount}}   </span></div>
+            <div class="col-md-4 col-sm-4 col-xs-4"><span> {{ singleQuate.likeCount}} </span></div>
+        </div>  
+        </div>
+    </div> 
+</article> 
+</div>
+
+
+
+

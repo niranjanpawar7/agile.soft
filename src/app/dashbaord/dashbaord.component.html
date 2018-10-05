@@ -1,0 +1,21 @@
+
+<div class="col-md-6 col-md-offset-3" *ngIf="userDetail"> 
+<article>
+    <div class="panel panel-default"> 
+        <div class="panel-heading"><h3>{{ userDetail.name }}</h3></div>
+        <div class="panel-body"> 
+          <p>{{ userDetail.email }}</p>
+          <p (click)="Logout()">Logout</p>
+        </div>
+        <div class="panel-footer">
+        <div class="counts-detail">
+            <h3>{{ userDetail.contact }}</h3>            
+        </div>
+        </div>
+    </div> 
+</article> 
+</div>
+
+
+
+

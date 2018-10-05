@@ -1,0 +1,26 @@
+<app-loginlinks></app-loginlinks>
+<div class="clearfix"></div>
+<div class="col-md-4"></div>
+
+<div class="col-md-4 border-form">
+      <div class="form-group">
+          <input type="email" class="form-control" [(ngModel)]= "user.name" placeholder="name">
+      </div>  
+
+      <div class="form-group">
+          <input type="email" class="form-control" [(ngModel)]= "user.email" placeholder="email">
+      </div>
+
+      <div class="form-group">
+          <input type="email" class="form-control" [(ngModel)]= "user.contact" placeholder="contact">
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="password">
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="saveData()">Registration</button>
+</div>
+
+
+<div class="col-md-4"></div>
