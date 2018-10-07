@@ -17,13 +17,14 @@ import { AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
   {path:'quotes', loadChildren:'./quotes/quotes.module#QuotesModule'},
+  {path:'quotes/:id', loadChildren:'./quotes-detail/quotes-detail.module#QuotesDetailModule'},
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },  
   { path: 'dashboard', component: DashbaordComponent, canActivate: [AuthGuard]},
    
-  { path: 'quotes/:id', component: QuotesDetailComponent , canActivate: [AuthGuard]}, 
+  //{ path: 'quotes/:id', component: QuotesDetailComponent , canActivate: [AuthGuard]}, 
   { path: 'quotes/author/:author', component: AuthorComponent, canActivate: [AuthGuard] } 
      
   

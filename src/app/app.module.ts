@@ -12,7 +12,7 @@ import { DashbaordComponent } from './dashbaord/dashbaord.component';
 
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service'; 
-import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
+//import { QuotesDetailComponent } from './quotes-detail/quotes-detail.component';
 import { AuthorComponent } from './author/author.component';
 import { LoginlinksComponent } from './loginlinks/loginlinks.component'; 
 import { AuthInterceptors } from './auth/auth.interceptor';
@@ -24,7 +24,7 @@ import { AuthInterceptors } from './auth/auth.interceptor';
     LoginComponent,
     RegistrationComponent,
     DashbaordComponent, 
-    QuotesDetailComponent,
+    //QuotesDetailComponent,
     AuthorComponent,
     LoginlinksComponent,  
   ],
