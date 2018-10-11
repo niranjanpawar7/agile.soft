@@ -41,8 +41,9 @@ export class AuthorComponent implements OnInit {
           this.allData = response;
           
           this.allData.filter(Items =>{ 
+              // error resolved
+              Items["author"]["name"] = Items["author"]["name"].toLowerCase();
 
-              Items["author"]["name"] = Items["author"]["name"].toLowerCase(); 
 
               if(Items["author"]["name"] ==this.authorName)
               {   
