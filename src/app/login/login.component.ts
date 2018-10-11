@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
       this.dataService.login(this.login)
       .subscribe(
 
-        (response) => { 
+        (response) => {  
         
            if(response && response['data'] && response['data'][0] && response['data'][0].email && response['data'][0].password){ 
-              
+               
               this.errorMsg = ''; 
 
               this.loggedData = response['data'][0]; 

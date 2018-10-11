@@ -11,23 +11,28 @@
 </div> 
 
 
+ <div class="col-md-3" style="margin-left: -22px;">  
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="filterStatus" placeholder="Enter Name"> 
+    </div>  
+</div>
  
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Author
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-        <li id="all" (click)="onChange('all')">All Data</li>
-        <li *ngFor="let data of allData" id="{{ data.author.id}}" [routerLink]="['/quotes/author', data.author.name]">{{ data.author.name }} </li> 
-    </ul>
-</div> 
+
+<div class="clearfix"></div>
+<hr style="margin: 20px 0px;">
+<div class="clearfix"></div>
+
+ 
+
+
   
-<div class="row" *ngIf="!showAuthorBlock">
-   <div class="item" *ngFor="let data of allData">  
+<div class="row" *ngIf="allData"> 
+ 
+   <div class="item" *ngFor="let data of allData | filter:filterStatus:'name'">  
         <div class="panel panel-primary">  
             <div class="panel-body">
                 <p> {{data.quote}}</p> 
-                <h5 [routerLink]="['/quotes/author', data.author.name]"> {{ data.author.name }} </h5>     
+                <h5 [routerLink]="['/quotes/author', data.author.name]"> {{ data.author.name | titlecase }} </h5>     
                     
                 <div class="row">                  
                     <span class="well"> {{ data.topics }}</span>  
@@ -51,30 +56,5 @@
 </div>
 
 
-<div class="row"  *ngIf="showAuthorBlock">
-   <div class="item"  *ngFor="let pushData of PushData">  
-        <div class="panel panel-primary" *ngIf="pushData">  
-            <div class="panel-body">
-                <p> {{pushData.quote}}</p> 
-                <h5> {{ pushData.author.name }} </h5>     
-                    
-                <div class="row">                  
-                    <span class="well"> {{ pushData.topics }}</span>  
-                </div>  
-            
-                <div class="count-section">
-                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ pushData.likeCount }}</span></div>
-                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ pushData.shareCount }}</span></div>
-                <div class="col-md-4 col-sm-4 col-xs-4"> <span>{{ pushData.viewCount }}</span></div>
-                </div>   
-                        
-                <div class="clearfix"></div>
-                <div class="row">    
-                <div class="col-md-12 text-center"> 
-                    <button [routerLink]="['/quotes/', pushData.author.id]"  class="btn btn-custom" type="button" title="View Details">Details</button>
-                </div>    
-                </div>
-            </div> 
-        </div>  
-   </div>
-</div>
+
+ 

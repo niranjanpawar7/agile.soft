@@ -5,6 +5,7 @@ import {Router} from "@angular/router"
 import { Observable } from 'rxjs'; 
 import { Quotes } from '../data.configuration'; 
 
+
  
 
 
@@ -21,16 +22,15 @@ export class QuotesComponent implements OnInit {
     allData :  Quotes[];
     onlyAthour :  Quotes[];
     myNewList :Quotes[];
-    uniqueAuthorList :any[] = [];
-    showAuthorBlock = false;
+    uniqueAuthorList :any[] = []; 
     listedData : any[] = [];
     PushData : any[] = [];
-  
+    
 
     constructor(private quotesService:QuotesService, private dataService : DataService, private router: Router) { }
 
     ngOnInit() {  
-
+        
         
          let token = localStorage.getItem('usertoken');
 
@@ -67,30 +67,7 @@ export class QuotesComponent implements OnInit {
     } // getquoteDaaata ends
 
 
-    onChange(author){   
-            const authorId = author;
-            this.quotesService.getQuotesData()
-            .subscribe(
-                (data) =>{ 
-                 this.listedData = data;
-                 this.PushData = [];
-                 this.listedData.map(items =>{   
-                     if(authorId == 'all'){  
-                            this.getAllQuotesData();  
-                            this.showAuthorBlock = false;
-                     } 
-                     if(items.author.id == authorId.id){    
-                            this.PushData.push(items); 
-                            this.showAuthorBlock = true;
-                     }  
-                 })
-            },
-                (error) =>{
-                    console.log(error)
-                }
-            )
-            
-    }// author Data
+   
 
     
   
@@ -99,5 +76,7 @@ export class QuotesComponent implements OnInit {
       this.router.navigate(['login']);
   }
 
-  
+
+
+  filterStatus : '';
 }
