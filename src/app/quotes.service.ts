@@ -29,7 +29,7 @@ export class QuotesService{
         return this.http.get<Quotes[]>('http://localhost:4200/assets/quotes.json');
                   
     }
-    getAuthorListData () : Observable<any>{    
+    getAuthorListData () : Observable<any>{  
         return this.http.get<Quotes[]>('http://localhost:4200/assets/quotes.json');
                   
     }  

@@ -20,40 +20,43 @@ export class AuthorComponent implements OnInit {
 
   constructor(private quotesService : QuotesService, private  route : ActivatedRoute, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+      
     let token = localStorage.getItem('usertoken');
      this.getAuthorlistblogs()
   }
 
-  getAuthorlistblogs(){ 
-   
-     
-     
-     
+  getAuthorlistblogs(){  
+
      this.route.params.subscribe((params: Params) => { this.authorName = params['author']; });
     
       
 
     this.quotesService.getAuthorListData()
     .subscribe(
-      (response) =>{
+      (response) =>{ 
           this.allData = [];
           this.authorData = [];
            
           this.allData = response;
           
           this.allData.filter(Items =>{ 
+              // error resolved
+              Items["author"]["name"] = Items["author"]["name"].toLowerCase();
+
+
               if(Items["author"]["name"] ==this.authorName)
-              {  
+              {   
                  this.authorData.push(Items);  
               }
           })
 
            
       },
-      (error) =>{
+      (error) =>{ 
           console.log('error Findings', error);
       }
+      
       ) 
   }
 
