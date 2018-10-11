@@ -4,6 +4,10 @@ import { QuotesComponent } from './quotes.component';
 import { Routes, RouterModule} from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '../auth/auth-guard.service';
+import { FormsModule } from '@angular/forms'; 
+import { FilterPipe } from '../filter.pipe';
+ 
+
 
 
 
@@ -32,9 +36,13 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule, 
   ],
-  declarations: [QuotesComponent],
+  declarations: [
+      QuotesComponent,
+       FilterPipe
+  ],
    
 })
 
