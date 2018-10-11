@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import {Router} from "@angular/router" 
 import { Observable } from 'rxjs'; 
 import { Quotes } from '../data.configuration'; 
+ 
 
 
  
